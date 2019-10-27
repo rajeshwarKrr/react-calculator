@@ -1,10 +1,10 @@
 {
-  "name": "calculator",
+  "name": "react-calculator",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
-  "homepage": "https://rajeshwarkrr.github.io/calculator",
+  "homepage": "https://rajeshwarkrr.github.io/react-calculator",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "16.8.6",
