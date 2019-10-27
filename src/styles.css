@@ -1,21 +1,22 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  max-width: 40%;
+  max-width: 50%;
   margin: auto;
 }
 
-.calculator.dark {
+.App.dark {
   background: #000;
   color: #fff;
   transition: 0.3s all;
 }
 
-.calculator.light {
+.App.light {
   background: #fff;
   color: #000;
   transition: 0.3s all;
 }
+
 .result {
   float: right;
 }

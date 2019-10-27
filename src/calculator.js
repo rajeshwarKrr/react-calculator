@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import useTheme from "./useTheme";
-
 function ResultComponent({ result }) {
   return (
     <React.Fragment>
@@ -15,7 +13,6 @@ function ResultComponent({ result }) {
     </React.Fragment>
   );
 }
-let Button = ({name}) => <button name={name}>{name}</button>
 
 function KeypadComponent({ onClick }) {
   let handleButtonClick = e => onClick(e.target.name);
@@ -145,8 +142,9 @@ function ScientificCalculator({ onClick }) {
   );
 }
 
-function Box() {
+function Calculator() {
   const [result, setResult] = useState("");
+  const [active, setActive] = useState(false);
 
   let onClick = key => {
     switch (key) {
@@ -194,29 +192,13 @@ function Box() {
 
   return (
     <React.Fragment>
+      <button type="button" onClick={() => setActive(!active)}>
+        Switch Calculator
+      </button>
       <ResultComponent result={result} />
-      {}
-      <ScientificCalculator onClick={onClick} />
+      {active ? <ScientificCalculator onClick={onClick} /> : ""}
       <KeypadComponent onClick={onClick} />
     </React.Fragment>
-  );
-}
-
-// Calcularot Main Component
-function Calculator() {
-  const { theme, toggleTheme } = useTheme();
-  const { calculator, toggleCalculator } = useState("normal");
-
-  return (
-    <div className={`calculator ${theme}`}>
-      <button type="button" onClick={toggleTheme}>
-        Switch theme
-      </button>
-      {/* <button type="button" onClick={toggleCalculator('')}>
-        Switch Calculator
-      </button> */}
-      <Box />
-    </div>
   );
 }
 
